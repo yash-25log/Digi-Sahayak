@@ -4,6 +4,7 @@ import axios from "axios";
 import { CryptoLogos, Button } from "@web3uikit/core";
 import { useNavigate } from "react-router-dom";
 import { Arrow } from "@web3uikit/icons";
+import TransactionList from "../Components/TransactionList";
 
 export default function TxtDetails() {
   const navigate = useNavigate();
@@ -65,8 +66,8 @@ export default function TxtDetails() {
         obj.to_address.length > 12
           ? obj.to_address.substring(0, 12) + "..."
           : obj.to_address;
-      const truncatedvalue =
-        obj.value.length > 7 ? obj.value.substring(0, 7) + "..." : obj.value;
+      const truncatedvalue = parseInt(obj.value) / 1e18;
+      // obj.value.length > 7 ? obj.value.substring(0, 7) + "..." : obj.value;
 
       // Return array of values with truncated miner ID
       return [
@@ -87,11 +88,15 @@ export default function TxtDetails() {
   const handleVisualize = () => {
     const data = {
       data: result,
+      walletAdd: inpId,
     };
 
     // Navigate to the next page and pass the data
     console.log("visualize=>", data.data);
-    data && navigate("/visualize", { state: { data: data.data } });
+    data &&
+      navigate("/visualize", {
+        state: { data: data.data, id: data.walletAdd },
+      });
   };
 
   return (
@@ -261,6 +266,11 @@ export default function TxtDetails() {
               ) : (
                 <TableNew data={[]} header={header2} style={style} />
               )}
+              {/* {getTable ? (
+                <TransactionList transactions={result} walletAddress={inpId} />
+              ) : (
+                ""
+              )} */}
             </div>
           </div>
         </div>
