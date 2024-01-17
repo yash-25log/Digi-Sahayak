@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-import Table from "../Components/Table";
 import TableNew from "../Components/Table";
 import axios from "axios";
-import { CryptoLogos } from "@web3uikit/core";
+import { CryptoLogos, Button } from "@web3uikit/core";
+import { useNavigate } from "react-router-dom";
+import { Arrow } from "@web3uikit/icons";
 
 export default function TxtDetails() {
+  const navigate = useNavigate();
+
   const [menu, setMenu] = useState(false);
   const [inpId, setInpId] = useState();
   const [result, setResult] = useState();
@@ -29,7 +32,9 @@ export default function TxtDetails() {
       hash: obj.hash,
       block_number: obj.block_number,
       from_address: obj.from_address,
+      from_address_label: obj.from_address_label,
       to_address: obj.to_address,
+      to_address_label: obj.to_address_labe,
       value: obj.value,
     }));
 
@@ -38,11 +43,12 @@ export default function TxtDetails() {
     <span>Transaction Hash</span>,
     <span>Block</span>,
     <span>From</span>,
+    "",
     <span>To</span>,
     <span>Value</span>,
   ];
 
-  const style = "90px 1fr 1fr 1fr 1fr 180px";
+  const style = "120px 1fr 1fr 1fr 1fr 1fr 1fr 150px";
 
   const NewData =
     modifiedData &&
@@ -72,15 +78,26 @@ export default function TxtDetails() {
         truncatedhash,
         obj.block_number,
         truncatedfrom,
+        <Arrow fontSize="25px" />,
         truncatedto,
         truncatedvalue,
       ];
     });
 
+  const handleVisualize = () => {
+    const data = {
+      data: result,
+    };
+
+    // Navigate to the next page and pass the data
+    console.log("visualize=>", data.data);
+    data && navigate("/visualize", { state: { data: data.data } });
+  };
+
   return (
     <div>
       <section className="bg-black">
-        <div className="w-full relative pb-10 px-6 xl:px-0 bg-slate-900">
+        <div className="w-full h-[100vh] relative pb-10 px-6 xl:px-0 bg-slate-900">
           <nav className="lg:hidden relative z-40">
             <div className="flex py-6 justify-between items-center px-4">
               <div>
@@ -189,7 +206,7 @@ export default function TxtDetails() {
             </div>
             <div className="w-5/6">
               <div className="flex items-center justify-end">
-                <ul className="text-white lg:space-x-8 flex items-center leading-none">
+                {/* <ul className="text-white lg:space-x-8 flex items-center leading-none">
                   <li>
                     <a
                       className="hover:text-indigo-500 text-lg focus:text-indigo-500"
@@ -222,7 +239,17 @@ export default function TxtDetails() {
                       Oracle
                     </a>
                   </li>
-                </ul>
+                </ul> */}
+                {getTable ? (
+                  <Button
+                    onClick={() => handleVisualize()}
+                    text="Visualize"
+                    theme="primary"
+                  />
+                ) : (
+                  ""
+                )}
+
                 <div className="pl-40"></div>
               </div>
             </div>
@@ -232,7 +259,7 @@ export default function TxtDetails() {
               {getTable ? (
                 <TableNew data={NewData} header={header2} style={style} />
               ) : (
-                <p className="text-white">No Data Found !!</p>
+                <TableNew data={[]} header={header2} style={style} />
               )}
             </div>
           </div>

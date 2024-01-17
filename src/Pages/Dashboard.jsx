@@ -4,6 +4,7 @@ import TableNew from "../Components/Table";
 import axios from "axios";
 import { CryptoLogos } from "@web3uikit/core";
 import "./dashboard.css";
+import { Link } from "react-router-dom";
 const Dashboard = () => {
   const [menu, setMenu] = useState(false);
   const [inpId, setInpId] = useState();
@@ -107,10 +108,7 @@ const Dashboard = () => {
           <nav className="lg:hidden relative z-40">
             <div className="flex py-6 justify-between items-center px-4">
               <div>
-                <img
-                  src="https://tuk-cdn.s3.amazonaws.com/can-uploader/right_aligned_with_searchbar_Svg3.svg"
-                  alt="logo"
-                />
+                <p>Digi Sahayak</p>
               </div>
               <div className="flex items-center">
                 <ul
@@ -180,10 +178,7 @@ const Dashboard = () => {
                 aria-label="we care company logo"
                 href="javascript:void(0)"
               >
-                <img
-                  src="https://tuk-cdn.s3.amazonaws.com/can-uploader/right_aligned_with_searchbar_Svg3.svg"
-                  alt="logo"
-                />
+                <p className="text-2xl , font-bold text-white">Digi Sahayak</p>
               </a>
             </div>
             <div className="w-5/6">
@@ -269,13 +264,15 @@ const Dashboard = () => {
                       src="https://tuk-cdn.s3.amazonaws.com/can-uploader/right_aligned_with_searchbar_Svg4.svg"
                       alt="icon"
                     />
-                    <input
-                      value={inpId}
-                      onChange={(e) => setInpId(e.target.value)}
-                      aria-label="Transaction address"
-                      className="w-28 xl:w-32 leading-none tracking-normal text-gray-800 ml-2.5 placeholder-black"
-                      placeholder="Transaction address"
-                    />
+                    <Link to="/search">
+                      <input
+                        value={inpId}
+                        onChange={(e) => setInpId(e.target.value)}
+                        aria-label="Transaction address"
+                        className="w-full xl:w-full leading-none tracking-normal text-gray-800 ml-2.5 placeholder-black"
+                        placeholder="Transaction address"
+                      />{" "}
+                    </Link>
                   </div>
                   {/* <div className="flex items-center sm:mx-4 xl:mx-14 my-6 lg:my-0">
                     <img
