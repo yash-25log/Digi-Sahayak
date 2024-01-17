@@ -184,10 +184,19 @@ export default function TxtDetails() {
             role="navigation"
             aria-label="Main"
             tabIndex="0"
+            style={{
+              // border:"2px solid red",
+              display:"flex",
+              alignItems:"center",
+              justifyContent:"center"
+            }}
             className="hidden relative z-10 w-full lg:flex justify-between items-center pt-12 pl-20 pb-12"
           >
-            <div className="w-[80%]">
-              <div className="bg-white lg:mt-16 py-2 px-2 flex flex-col sm:flex-row justify-start sm:justify-between items-start sm:items-center shadow-lg rounded-lg ">
+            <div className="w-[80%]"
+            >
+              <div className="bg-white lg:mt-4 py-1.5 px-1.5 flex justify-center flex-col sm:flex-row justify-start lg:align-center sm:justify-between items-start sm:items-center shadow-lg rounded-lg "
+              style={{marginRight:"0.4rem",borderRadius:"100px"}}
+            >
                 <div className="sm:flex items-center py-1">
                   <div className="flex items-center">
                     <img
@@ -195,20 +204,22 @@ export default function TxtDetails() {
                       alt="icon"
                     />
                     <input
+                    style={{width:"600px"}}
                       value={inpId}
                       onChange={(e) => setInpId(e.target.value)}
                       aria-label="Transaction address"
                       className="w-full xl:w-full leading-none tracking-normal text-gray-800 ml-2.5 placeholder-black"
-                      placeholder="Transaction address"
+                      placeholder="Transaction address "
                     />
                   </div>
                 </div>
                 <button
+                style={{marginRight:"0.4rem",borderRadius:"100px"}}
                   onClick={() => handleSubmitId()}
                   id="inputField"
                   role="button"
                   aria-label="search"
-                  className="focus:bg-indigo-700 focus:ring-indigo-700 focus:ring-2 focus:ring-offset-2 text-white bg-indigo-600 hover:bg-indigo-700 mt-4 sm:mt-0 p-3 lg:-ml-8 rounded w-full sm:w-auto relative"
+                  className="focus:bg-indigo-700 focus:ring-indigo-700 focus:ring-2 focus:ring-offset-2 text-white bg-indigo-600 hover:bg-indigo-700 mt-0 sm:mt-0 p-3 lg:-ml-8 rounded w-full sm:w-auto relative"
                 >
                   <img
                     className="absolute right-0 mr-2 sm:mr-auto sm:relative icon icon-tabler icon-tabler-search cursor-pointer"
@@ -261,13 +272,16 @@ export default function TxtDetails() {
                 {getTable ? (
                   <>
                     <Button
+                    style={{padding:"0.5rem",marginRight:"1rem",width:"100px"}}
+                    
                       onClick={() => handleVisualize()}
                       text="Visualize"
                       theme="primary"
                     />
                     <Button
+                    style={{padding:"0.5rem",marginRight:"1rem",width:"100px"}}
                       onClick={() => handleDetect()}
-                      text="Detect"
+                      text="Analyze"
                       theme="primary"
                     />
                   </>

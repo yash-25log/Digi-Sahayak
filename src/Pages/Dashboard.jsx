@@ -102,12 +102,12 @@ const Dashboard = () => {
 
   return (
     <div>
-      <section id="background_main">
+      <section id="background_main" style={{height:"110vh"}}>
         <div className="w-full  relative pb-10 px-6 xl:px-0 ">
           {/* <img className="absolute w-full inset-0 h-full object-cover object-center " src="https://cdn.tuk.dev/assets/templates/weCare/hero2-bg.png" alt="we care family"/> */}
           <nav className="lg:hidden relative z-40">
             <div className="flex py-6 justify-between items-center px-4">
-              <div>
+              <div style={{fontFamily:"Limelight,cursive;"}}>
                 <p>Digi Sahayak</p>
               </div>
               <div className="flex items-center">
@@ -172,13 +172,13 @@ const Dashboard = () => {
             tabIndex="0"
             className="hidden relative z-10 w-full lg:flex justify-between items-center p-20"
           >
-            <div className="w-1/6">
+            <div className="w-2/6">
               <a
                 tabIndex="0"
                 aria-label="we care company logo"
                 href="javascript:void(0)"
               >
-                <p className="text-2xl , font-bold text-white">Digi Sahayak</p>
+                <p style={{fontSize:"2.5rem",fontWeight:"700",color:"white"}}>Digi Sahayak</p>
               </a>
             </div>
             <div className="w-5/6">
@@ -233,42 +233,48 @@ const Dashboard = () => {
             </div>
           </nav>
           <div
+          
             className="lg:w-10/12 pt-1 lg:flex items-center relative z-10 container mx-auto"
             style={{ gap: "2rem" }}
           >
-            <div className="lg:w-1/2 h-full lg:pr-10 xl:pr-0">
+            <div className="lg:w-1/2 h-full lg:pr-10 xl:pr-0"
+            
+            >
               {/* <img tabIndex="0" role="img" aria-label="people smiling" className="mx-auto" src="https://cdn.tuk.dev/assets/templates/weCare/hero2-left.png"  alt="people smiling"/> */}
               <TableNew data={NewData} header={header1} style={style} />
             </div>
             <div
               role="contentinfo"
               className="w-full lg:flex lg:flex-col lg:w-1/2 h-4/6"
-            >
+              style={{color:"rgb(102,74,201)",height:'65vh',display:"flex",flexDirection:"column",justifyContent:"between",gap:"1rem",fontFamily:"Limelight,cursive;"}}>
               <p
                 tabIndex="0"
-                className="text-indigo-700 uppercase text-2xl mb-4"
+                className=" uppercase text-2xl mb-4"
+                style={{color:"white"}}
               >
-                Crypto Flow Investigation
+               
               </p>
               <h1
                 tabIndex="0"
-                className="text-indigo-700 text-4xl lg:text-6xl font-black mb-8"
+                className=" text-4xl lg:text-6xl font-black mb-8"
               >
                 Digi Sahayak
               </h1>
-              <p tabIndex="0" className="text-white font-regular mb-8">
+              <p tabIndex="0" className="text-white font-regular mb-8" style={{textWrap:"wrap"}}>
                 Ride the Crypto Wave with Cryptoflow: Your Ultimate Tracker for
-                Seamless Insights and Fluid Market Flow! Watch.
+                Seamless Insights
               </p>
-              <div className="bg-white lg:mt-16 py-4 px-4 flex flex-col sm:flex-row justify-start sm:justify-between items-start sm:items-center shadow-lg rounded-lg">
-                <div className="sm:flex items-center py-2">
+              <div className="bg-white lg:mt-16 py-1 px-1 flex flex-col sm:flex-row justify-start sm:justify-between items-start sm:items-center shadow-lg rounded-lg" style={{border:"2px solid aqua", borderRadius:"180rem"}}>
+                <div className="sm:flex items-center py-2" >
                   <div className="flex items-center">
                     <img
+                    
                       src="https://tuk-cdn.s3.amazonaws.com/can-uploader/right_aligned_with_searchbar_Svg4.svg"
                       alt="icon"
                     />
-                    <Link to="/search">
+                    <Link to="/search" >
                       <input
+                        
                         value={inpId}
                         onChange={(e) => setInpId(e.target.value)}
                         aria-label="Transaction address"
@@ -282,6 +288,7 @@ const Dashboard = () => {
                   onClick={() => handleSubmitId()}
                   id="inputField"
                   role="button"
+                  style={{marginRight:"0.4rem",borderRadius:"100px"}}
                   aria-label="search"
                   className="focus:bg-indigo-700 focus:ring-indigo-700 focus:ring-2 focus:ring-offset-2 text-white bg-indigo-600 hover:bg-indigo-700 mt-4 sm:mt-0 p-3 lg:-ml-8 rounded w-full sm:w-auto relative"
                 >
@@ -289,7 +296,7 @@ const Dashboard = () => {
                     className="absolute right-0 mr-2 sm:mr-auto sm:relative icon icon-tabler icon-tabler-search cursor-pointer"
                     src="https://tuk-cdn.s3.amazonaws.com/can-uploader/right_aligned_with_searchbar_Svg7.svg"
                     alt="search"
-                  />
+                    />
                   <input
                     aria-label="Advanced Vision"
                     className="sm:hidden border-b border-gray-300 w-full bg-transparent pr-6"
