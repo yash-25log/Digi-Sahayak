@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+## Problem Statement 12
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Problem Background:
 
-## Available Scripts
+$ Rise of Cryptocurrency in Illicit Activities:
+Cryptocurrencies are being used in activities like fake dating profiles, ransomware, investment scams, darknet criminal businesses, and ponzi schemes.
 
-In the project directory, you can run:
+$ Difficulty in Investigation:
+Investigating the flow of cryptocurrency becomes difficult due to various methods of hiding and mixing funds.
 
-### `npm start`
+# Challenges:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+$ Cryptocurrency Flow Tracking:
+Tracking the flow of cryptocurrency is difficult, especially when funds are hidden in mixers, coin swap services, privacy coins, DeFi services, and layering services.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+$ Limited Features in Existing Tools:
+Free software like Blockexplorer, Metasleuth, and Etherscan have limitations in offering complete features for tracking and visualizing cryptocurrency flow.
 
-### `npm test`
+$ Cross-Border Transactions:
+The flow of cryptocurrency often involves cross-border transactions, adding another layer of complexity to the investigation.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![image](https://github.com/sahilrohera10/RJPOLICE_HACK_1330_HackerX_12/assets/90958499/0eea8dd7-cd9d-4f85-a7b4-3eec36a7120e)
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Expected Solution:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+$ Better Visualization Software / Funds Flow System:
+Develop a new software/tool that addresses the limitations of current ones.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+$ Sankey Diagram Features:
+Utilize features of Sankey diagrams to visually show the flow of funds.
 
-### `npm run eject`
+$ Incorporate Hiding Techniques:
+Include features that identify and show the specific hiding techniques used in the flow, such as mixers, DeFi services, and layering.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+$ Direct method to Crypto-Exchanges:
+Provide a direct method to tracing funds to crypto-exchanges like Coinbase, Binance, and Kraken.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+$ Integration of Direct Messages:
+Integrate a communication system that allows users to send direct messages to nodal points of crypto-exchanges and mixer services for obtaining information promptly.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![image](https://github.com/sahilrohera10/RJPOLICE_HACK_1330_HackerX_12/assets/90958499/9b0e48e1-34db-45b8-9787-e6d4b32b3dde)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Key Objectives:
 
-## Learn More
+$ Comprehensive Tracking:
+Ensure the tool can thoroughly track the flow of cryptocurrency through various stages, from initial illicit activities to crypto-exchanges.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+$ User-Friendly Visualization:
+Create an intuitive and user-friendly visualization interface that uses Sankey diagrams for clear representation.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+$ Real-Time contact:
+Enable real-time contact with crypto-exchanges and mixer services to expedite the investigation process.
 
-### Code Splitting
+$ Global Transaction Analysis:
+Provide tools for analyzing and tracking cross-border transactions.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![WhatsApp Image 2024-01-17 at 20 43 20_ef31ea2d](https://github.com/sahilrohera10/RJPOLICE_HACK_1330_HackerX_12/assets/58944204/6ceec776-c313-49aa-902f-23d0c35f934c)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# Technical Considerations:
 
-### Making a Progressive Web App
+Blockchain Analysis:
+Leverage blockchain analysis methods to trace transactions.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Data Privacy and Security:
+Implement robust data privacy and security measures, given the sensitivity of the information being handled.
 
-### Advanced Configuration
+User Authentication:
+Ensure secure user authentication and authorization to avoid misuse of the tool.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Regulatory Compliance:
+Adhere to important legal and regulatory systems governing cryptocurrency investigations.
 
-### Deployment
+![WhatsApp Image 2024-01-18 at 00 04 29_03b87b40](https://github.com/sahilrohera10/RJPOLICE_HACK_1330_HackerX_12/assets/58944204/9d631c8c-eb9d-4685-9dd4-667e49b43907)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

@@ -1,13 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
-import transactionTracker from './transactionTracker'
-import Dashboard from './Pages/Dashboard';
+import logo from "./logo.svg";
+import "./App.css";
+import Dashboard from "./Pages/Dashboard";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import TxtDetails from "./Pages/TxtDetails";
+import Visualize from "./Pages/Visualize";
+import Detect from "./Pages/Detect";
+import transactionTracker from "./transactionTracker";
 
 function App() {
   return (
     <div className="App">
-      {/* <Dashboard/> */}
-      <transactionTracker/>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="search" element={<TxtDetails />} />
+          <Route path="/visualize" element={<Visualize />} />
+          <Route path="/detect" element={<Detect />} />
+          <Route path="/tracker" element={<transactionTracker />} />
+
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
