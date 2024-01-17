@@ -1,9 +1,104 @@
-import react, { useState } from "react";
+import react, { useState, useEffect } from "react";
 import Table from "../Components/Table";
 import TableNew from "../Components/Table";
+import axios from "axios";
+import { CryptoLogos } from "@web3uikit/core";
 
 const Dashboard = () => {
   const [menu, setMenu] = useState(false);
+  const [inpId, setInpId] = useState();
+  const [result, setResult] = useState();
+
+  const [totalTransactions, setTotalTransactions] = useState();
+  const [latestBlock, setLatestBlock] = useState();
+  const [blockResult, setBlockResult] = useState();
+  const [transactionsResult, setTransactionsResult] = useState();
+
+  useEffect(() => {
+    const getBlockInfo = async () => {
+      const response = await axios.get(
+        "http://localhost:8002/getblockinfo",
+        {}
+      );
+      console.log("resp=>", response);
+      const blockArray = [
+        response.data.previousBlockInfo[0].transactions[0],
+        response.data.previousBlockInfo[0].transactions[1],
+        response.data.previousBlockInfo[0].transactions[2],
+        response.data.previousBlockInfo[0].transactions[3],
+        response.data.previousBlockInfo[0].transactions[4],
+      ];
+
+      const transactions = [response.data.previousBlockInfo[0].transactions];
+
+      setTotalTransactions(
+        response.data.previousBlockInfo[1].totalTransactions
+      );
+      setLatestBlock(response.data.latestBlock);
+      setBlockResult(blockArray);
+      setTransactionsResult(response.data.previousBlockInfo[0].transactions);
+    };
+
+    getBlockInfo();
+    console.log("data=>", blockResult);
+  }, []);
+
+  const handleSubmitId = async () => {
+    console.log("id=>", inpId);
+    document.querySelector("#inputField").value = "";
+
+    const response = await axios.get("http://localhost:8002/address", {
+      params: { address: inpId },
+    });
+
+    setResult(response.data.result);
+    console.log("Id data =>", response.data.result);
+  };
+
+  const header1 = [
+    "",
+    <span>TransactionId</span>,
+    <span>From</span>,
+    <span>To</span>,
+    <span>Value</span>,
+  ];
+
+  const style = "70px 2fr 2fr 2fr 170px";
+
+  const NewData =
+    blockResult &&
+    blockResult.map((obj) => {
+      // Truncate miner ID if it's longer than truncationLength
+      const truncatedtxnid =
+        obj.transactionHash.length > 12
+          ? obj.transactionHash.substring(0, 12) + "..."
+          : obj.transactionHash;
+      const truncatedfromid =
+        obj.fromAddress.length > 12
+          ? obj.fromAddress.substring(0, 12) + "..."
+          : obj.fromAddress;
+
+      const truncatedtoid =
+        obj.toAddress.length > 12
+          ? obj.toAddress.substring(0, 12) + "..."
+          : obj.toAddress;
+      const truncatedvalue =
+        obj.value.length > 7 ? obj.value.substring(0, 7) + "..." : obj.value;
+
+      // Return array of values with truncated miner ID
+      return [
+        <CryptoLogos
+          chain="ethereum"
+          onClick={function noRefCheck() {}}
+          size="35px"
+        />, // Empty string at the beginning
+        truncatedtxnid,
+        truncatedfromid,
+        truncatedtoid,
+        truncatedvalue,
+      ];
+    });
+
   return (
     <div>
       <section className="bg-black">
@@ -142,7 +237,7 @@ const Dashboard = () => {
           <div className="pt-1 lg:flex items-center relative z-10 container mx-auto">
             <div className="w-full lg:w-1/2 h-full lg:pr-10 xl:pr-0">
               {/* <img tabIndex="0" role="img" aria-label="people smiling" className="mx-auto" src="https://cdn.tuk.dev/assets/templates/weCare/hero2-left.png"  alt="people smiling"/> */}
-              <TableNew />
+              <TableNew data={NewData} header={header1} style={style} />
             </div>
             <div role="contentinfo" className="w-full lg:w-1/2 h-full">
               <p
@@ -169,6 +264,8 @@ const Dashboard = () => {
                       alt="icon"
                     />
                     <input
+                      value={inpId}
+                      onChange={(e) => setInpId(e.target.value)}
                       aria-label="Transaction address"
                       className="w-28 xl:w-32 leading-none tracking-normal text-gray-800 ml-2.5 placeholder-black"
                       placeholder="Transaction address"
@@ -184,6 +281,8 @@ const Dashboard = () => {
                                 </div> */}
                 </div>
                 <button
+                  onClick={() => handleSubmitId()}
+                  id="inputField"
                   role="button"
                   aria-label="search"
                   className="focus:bg-indigo-700 focus:ring-indigo-700 focus:ring-2 focus:ring-offset-2 text-white bg-indigo-600 hover:bg-indigo-700 mt-4 sm:mt-0 p-3 lg:-ml-8 rounded w-full sm:w-auto relative"
