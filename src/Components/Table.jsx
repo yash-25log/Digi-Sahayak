@@ -47,27 +47,27 @@ const TableNew = () => {
     blockResult.map((obj) => {
       // Truncate miner ID if it's longer than truncationLength
       const truncatedtxnid =
-        obj.transactionHash.length > 8
-          ? obj.transactionHash.substring(0, 8) + "..."
+        obj.transactionHash.length > 12
+          ? obj.transactionHash.substring(0, 12) + "..."
           : obj.transactionHash;
       const truncatedfromid =
-        obj.fromAddress.length > 8
-          ? obj.fromAddress.substring(0, 8) + "..."
+        obj.fromAddress.length > 12
+          ? obj.fromAddress.substring(0, 12) + "..."
           : obj.fromAddress;
 
       const truncatedtoid =
-        obj.toAddress.length > 8
-          ? obj.toAddress.substring(0, 8) + "..."
+        obj.toAddress.length > 12
+          ? obj.toAddress.substring(0, 12) + "..."
           : obj.toAddress;
       const truncatedvalue =
-        obj.value.length > 5 ? obj.value.substring(0, 5) + "..." : obj.value;
+        obj.value.length > 7 ? obj.value.substring(0, 7) + "..." : obj.value;
 
       // Return array of values with truncated miner ID
       return [
         <CryptoLogos
           chain="ethereum"
           onClick={function noRefCheck() {}}
-          size="48px"
+          size="35px"
         />, // Empty string at the beginning
         truncatedtxnid,
         truncatedfromid,
@@ -79,7 +79,7 @@ const TableNew = () => {
   return (
     <div>
       <Table
-        columnsConfig="80px 3fr 2fr 2fr 80px"
+        columnsConfig="70px 2fr 2fr 2fr 170px"
         data={NewData}
         header={[
           "",
