@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const PORT = 8002;
+const axios = require("axios");
 
 const Moralis = require("moralis").default;
 
@@ -80,6 +81,20 @@ app.get("/getblockinfo", async (req, res) => {
   } catch (error) {
     console.log(`something went wrong ${error}`);
     return res.status(400).json({ msg: `something went wrong ${error}` });
+  }
+});
+
+app.get("/high-volume", async (req, res) => {
+  try {
+    const response = await axios.get(
+      "https://interface.insidefi.io/v2/0xbdfa4f4492dd7b7cf211209c4791af8d52bf5c50/transactions?chain=ETH&page=1&limit=10"
+    );
+    console.log("high data=>", response.data.result.data.transactions);
+    return res
+      .status(200)
+      .json({ data: response.data.result.data.transactions });
+  } catch (error) {
+    return res.status(400).json({ error: error });
   }
 });
 

@@ -183,7 +183,7 @@ const Dashboard = () => {
             </div>
             <div className="w-5/6">
               <div className="flex items-center justify-end">
-                <ul className="text-white lg:space-x-8 flex items-center leading-none">
+                {/* <ul className="text-white lg:space-x-8 flex items-center leading-none">
                   <li>
                     <a
                       className="hover:text-indigo-500 text-lg focus:text-indigo-500"
@@ -216,15 +216,18 @@ const Dashboard = () => {
                       Oracle
                     </a>
                   </li>
-                </ul>
+                </ul> */}
                 <div className="pl-40">
-                  <button
-                    role="button"
-                    aria-label="live chat"
-                    className="focus:bg-indigo-600 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 bg-indigo-700 hover:bg-indigo-600 text-white px-6 py-2 font-semibold rounded focus:outline-none"
-                  >
-                    Search
-                  </button>
+                  <Link to="/advanced-search">
+                    {" "}
+                    <button
+                      role="button"
+                      aria-label="live chat"
+                      className="focus:bg-indigo-600 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 bg-indigo-700 hover:bg-indigo-600 text-white px-6 py-2 font-semibold rounded focus:outline-none"
+                    >
+                      Advanced Vision
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -274,28 +277,6 @@ const Dashboard = () => {
                       />{" "}
                     </Link>
                   </div>
-                  {/* <div className="flex items-center sm:mx-4 xl:mx-14 my-6 lg:my-0">
-                    <img
-                      src="https://tuk-cdn.s3.amazonaws.com/can-uploader/right_aligned_with_searchbar_Svg5.svg"
-                      alt="icon"
-                    />
-                    <input
-                      aria-label="zip code"
-                      className="w-24 xl:w-32 leading-none tracking-normal text-gray-800 ml-2.5 placeholder-black"
-                      placeholder="Funds"
-                    />
-                  </div> */}
-                  {/* <div className="flex items-center">
-                    <img
-                      src="https://tuk-cdn.s3.amazonaws.com/can-uploader/right_aligned_with_searchbar_Svg6.svg"
-                      alt="icon"
-                    />
-                    <input
-                      aria-label="insurance"
-                      className="w-24 xl:w-32 leading-none tracking-normal text-gray-800 ml-2.5 placeholder-black"
-                      placeholder="Exchanges"
-                    />
-                  </div> */}
                 </div>
                 <button
                   onClick={() => handleSubmitId()}
@@ -310,7 +291,7 @@ const Dashboard = () => {
                     alt="search"
                   />
                   <input
-                    aria-label="search"
+                    aria-label="Advanced Vision"
                     className="sm:hidden border-b border-gray-300 w-full bg-transparent pr-6"
                   />
                 </button>
