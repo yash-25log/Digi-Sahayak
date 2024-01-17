@@ -4,6 +4,7 @@ import Dashboard from "./Pages/Dashboard";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import TxtDetails from "./Pages/TxtDetails";
 import Visualize from "./Pages/Visualize";
+import Detect from "./Pages/Detect";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="search" element={<TxtDetails />} />
           <Route path="/visualize" element={<Visualize />} />
+          <Route path="/detect" element={<Detect />} />
         </Routes>
       </BrowserRouter>
     </div>

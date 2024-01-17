@@ -99,6 +99,19 @@ export default function TxtDetails() {
       });
   };
 
+  const handleDetect = () => {
+    const data = {
+      data: result,
+    };
+
+    // Navigate to the next page and pass the data
+    console.log("detect=>", data.data);
+    data &&
+      navigate("/detect", {
+        state: { data: data.data },
+      });
+  };
+
   return (
     <div>
       <section className="bg-black">
@@ -246,11 +259,18 @@ export default function TxtDetails() {
                   </li>
                 </ul> */}
                 {getTable ? (
-                  <Button
-                    onClick={() => handleVisualize()}
-                    text="Visualize"
-                    theme="primary"
-                  />
+                  <>
+                    <Button
+                      onClick={() => handleVisualize()}
+                      text="Visualize"
+                      theme="primary"
+                    />
+                    <Button
+                      onClick={() => handleDetect()}
+                      text="Detect"
+                      theme="primary"
+                    />
+                  </>
                 ) : (
                   ""
                 )}
