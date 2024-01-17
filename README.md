@@ -55,7 +55,8 @@ Enable real-time contact with crypto-exchanges and mixer services to expedite th
 $ Global Transaction Analysis:
 Provide tools for analyzing and tracking cross-border transactions.
 
-![image](https://github.com/sahilrohera10/RJPOLICE_HACK_1330_HackerX_12/assets/90958499/771ccc41-9f68-4db0-b43e-ac5cef1753fa)
+![WhatsApp Image 2024-01-17 at 20 43 20_ef31ea2d](https://github.com/sahilrohera10/RJPOLICE_HACK_1330_HackerX_12/assets/58944204/6ceec776-c313-49aa-902f-23d0c35f934c)
+
 
 # Technical Considerations:
 
