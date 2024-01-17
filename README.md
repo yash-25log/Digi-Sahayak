@@ -1,5 +1,5 @@
-##Problem Statement 12
-×
+## Problem Statement 12
+
 ->Problem Background:
 
 $ Rise of Cryptocurrency in Illicit Activities:
