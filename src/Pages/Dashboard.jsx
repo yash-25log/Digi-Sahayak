@@ -3,7 +3,7 @@ import Table from "../Components/Table";
 import TableNew from "../Components/Table";
 import axios from "axios";
 import { CryptoLogos } from "@web3uikit/core";
-
+import "./dashboard.css";
 const Dashboard = () => {
   const [menu, setMenu] = useState(false);
   const [inpId, setInpId] = useState();
@@ -101,8 +101,8 @@ const Dashboard = () => {
 
   return (
     <div>
-      <section className="bg-black">
-        <div className="w-full relative pb-10 px-6 xl:px-0 bg-slate-900">
+      <section id="background_main">
+        <div className="w-full  relative pb-10 px-6 xl:px-0 ">
           {/* <img className="absolute w-full inset-0 h-full object-cover object-center " src="https://cdn.tuk.dev/assets/templates/weCare/hero2-bg.png" alt="we care family"/> */}
           <nav className="lg:hidden relative z-40">
             <div className="flex py-6 justify-between items-center px-4">
@@ -234,12 +234,18 @@ const Dashboard = () => {
               </div>
             </div>
           </nav>
-          <div className="pt-1 lg:flex items-center relative z-10 container mx-auto">
-            <div className="w-full lg:w-1/2 h-full lg:pr-10 xl:pr-0">
+          <div
+            className="lg:w-10/12 pt-1 lg:flex items-center relative z-10 container mx-auto"
+            style={{ gap: "2rem" }}
+          >
+            <div className="lg:w-1/2 h-full lg:pr-10 xl:pr-0">
               {/* <img tabIndex="0" role="img" aria-label="people smiling" className="mx-auto" src="https://cdn.tuk.dev/assets/templates/weCare/hero2-left.png"  alt="people smiling"/> */}
               <TableNew data={NewData} header={header1} style={style} />
             </div>
-            <div role="contentinfo" className="w-full lg:w-1/2 h-full">
+            <div
+              role="contentinfo"
+              className="w-full lg:flex lg:flex-col lg:w-1/2 h-4/6"
+            >
               <p
                 tabIndex="0"
                 className="text-indigo-700 uppercase text-2xl mb-4"
@@ -272,13 +278,27 @@ const Dashboard = () => {
                     />
                   </div>
                   {/* <div className="flex items-center sm:mx-4 xl:mx-14 my-6 lg:my-0">
-                                    <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/right_aligned_with_searchbar_Svg5.svg" alt="icon" />
-                                    <input aria-label="zip code" className="w-24 xl:w-32 leading-none tracking-normal text-gray-800 ml-2.5 placeholder-black" placeholder="Funds" />
-                                </div>
-                                <div className="flex items-center">
-                                    <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/right_aligned_with_searchbar_Svg6.svg" alt="icon" />
-                                    <input aria-label="insurance" className="w-24 xl:w-32 leading-none tracking-normal text-gray-800 ml-2.5 placeholder-black" placeholder="Exchanges" />
-                                </div> */}
+                    <img
+                      src="https://tuk-cdn.s3.amazonaws.com/can-uploader/right_aligned_with_searchbar_Svg5.svg"
+                      alt="icon"
+                    />
+                    <input
+                      aria-label="zip code"
+                      className="w-24 xl:w-32 leading-none tracking-normal text-gray-800 ml-2.5 placeholder-black"
+                      placeholder="Funds"
+                    />
+                  </div> */}
+                  {/* <div className="flex items-center">
+                    <img
+                      src="https://tuk-cdn.s3.amazonaws.com/can-uploader/right_aligned_with_searchbar_Svg6.svg"
+                      alt="icon"
+                    />
+                    <input
+                      aria-label="insurance"
+                      className="w-24 xl:w-32 leading-none tracking-normal text-gray-800 ml-2.5 placeholder-black"
+                      placeholder="Exchanges"
+                    />
+                  </div> */}
                 </div>
                 <button
                   onClick={() => handleSubmitId()}
