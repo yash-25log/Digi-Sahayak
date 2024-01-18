@@ -12,7 +12,7 @@ const Detect = () => {
       {
         label: "Value",
         data: [],
-        borderColor: "blue",
+        borderColor: "white",
         fill: false, // Set fill to false for line chart
       },
     ],
@@ -30,7 +30,7 @@ const Detect = () => {
         {
           label: "Value",
           data: values,
-          borderColor: "blue",
+          borderColor: "white",
           fill: false,
         },
       ],
@@ -38,8 +38,13 @@ const Detect = () => {
   }, [data]);
 
   return (
-    <div className="w-[70vw] m-auto mt-20">
-      <Line data={chartData} />;
+    <div className="bg-slate-900 h-[100vh]">
+      <p className="text-white pt-12 text-xl">
+        Transaction Time v/s Value Representation
+      </p>
+      <div className="w-[70vw] m-auto pt-12">
+        <Line data={chartData} />;
+      </div>
     </div>
   );
 };

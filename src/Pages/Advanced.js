@@ -72,7 +72,7 @@ export default function Advanced() {
   return (
     <div className="bg-slate-900 h-[100vh]">
       <p className="text-white text-2xl pt-10 font-bold">
-        High Value Transactions
+        Filtered High Value Transactions
       </p>
       <div className="w-[70vw] m-auto pt-16">
         {getTable ? (
