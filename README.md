@@ -1,5 +1,7 @@
 ## Problem Statement 12
 
+SOLUTION PPT - https://drive.google.com/file/d/1j_b61yc_wdRtTBMoDMQTEtxn8S2fvS6p/view?usp=sharing
+
 # Problem Background:
 
 $ Rise of Cryptocurrency in Illicit Activities:
