@@ -6,6 +6,8 @@ import TxtDetails from "./Pages/TxtDetails";
 import Visualize from "./Pages/Visualize";
 import Detect from "./Pages/Detect";
 import transactionTracker from "./transactionTracker";
+import Advanced from "./Pages/Advanced";
+import BtoB from "./Pages/BtoB";
 
 function App() {
   return (
@@ -16,8 +18,9 @@ function App() {
           <Route path="search" element={<TxtDetails />} />
           <Route path="/visualize" element={<Visualize />} />
           <Route path="/detect" element={<Detect />} />
-          <Route path="/tracker" element={<transactionTracker />} />
+          <Route path="/tracker" element={<BtoB />} />
 
+          <Route path="/advanced-search" element={<Advanced />} />
         </Routes>
       </BrowserRouter>
     </div>
