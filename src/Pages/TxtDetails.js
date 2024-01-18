@@ -102,13 +102,14 @@ export default function TxtDetails() {
   const handleDetect = () => {
     const data = {
       data: result,
+      id: inpId,
     };
 
     // Navigate to the next page and pass the data
     console.log("detect=>", data.data);
     data &&
       navigate("/detect", {
-        state: { data: data.data },
+        state: { data: data.data, id: data.id },
       });
   };
 
@@ -186,17 +187,17 @@ export default function TxtDetails() {
             tabIndex="0"
             style={{
               // border:"2px solid red",
-              display:"flex",
-              alignItems:"center",
-              justifyContent:"center"
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
             className="hidden relative z-10 w-full lg:flex justify-between items-center pt-12 pl-20 pb-12"
           >
-            <div className="w-[80%]"
-            >
-              <div className="bg-white lg:mt-4 py-1.5 px-1.5 flex justify-center flex-col sm:flex-row justify-start lg:align-center sm:justify-between items-start sm:items-center shadow-lg rounded-lg "
-              style={{marginRight:"0.4rem",borderRadius:"100px"}}
-            >
+            <div className="w-[80%]">
+              <div
+                className="bg-white lg:mt-4 py-1.5 px-1.5 flex justify-center flex-col sm:flex-row justify-start lg:align-center sm:justify-between items-start sm:items-center shadow-lg rounded-lg "
+                style={{ marginRight: "0.4rem", borderRadius: "100px" }}
+              >
                 <div className="sm:flex items-center py-1">
                   <div className="flex items-center">
                     <img
@@ -204,7 +205,7 @@ export default function TxtDetails() {
                       alt="icon"
                     />
                     <input
-                    style={{width:"600px"}}
+                      style={{ width: "600px" }}
                       value={inpId}
                       onChange={(e) => setInpId(e.target.value)}
                       aria-label="Transaction address"
@@ -214,7 +215,7 @@ export default function TxtDetails() {
                   </div>
                 </div>
                 <button
-                style={{marginRight:"0.4rem",borderRadius:"100px"}}
+                  style={{ marginRight: "0.4rem", borderRadius: "100px" }}
                   onClick={() => handleSubmitId()}
                   id="inputField"
                   role="button"
@@ -272,14 +273,21 @@ export default function TxtDetails() {
                 {getTable ? (
                   <>
                     <Button
-                    style={{padding:"0.5rem",marginRight:"1rem",width:"100px"}}
-                    
+                      style={{
+                        padding: "0.5rem",
+                        marginRight: "1rem",
+                        width: "100px",
+                      }}
                       onClick={() => handleVisualize()}
                       text="Visualize"
                       theme="primary"
                     />
                     <Button
-                    style={{padding:"0.5rem",marginRight:"1rem",width:"100px"}}
+                      style={{
+                        padding: "0.5rem",
+                        marginRight: "1rem",
+                        width: "100px",
+                      }}
                       onClick={() => handleDetect()}
                       text="Analyze"
                       theme="primary"
