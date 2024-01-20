@@ -5,6 +5,7 @@ import { CryptoLogos, Button } from "@web3uikit/core";
 import { useNavigate } from "react-router-dom";
 import { Arrow } from "@web3uikit/icons";
 import TransactionList from "../Components/TransactionList";
+import configdata from "../config.json";
 
 export default function TxtDetails() {
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ export default function TxtDetails() {
     console.log("id=>", inpId);
     document.querySelector("#inputField").value = "";
 
-    const response = await axios.get("http://localhost:8002/address", {
+    const response = await axios.get(`${configdata.api}/address`, {
       params: { address: inpId },
     });
 

@@ -5,6 +5,9 @@ import axios from "axios";
 import { CryptoLogos } from "@web3uikit/core";
 import "./dashboard.css";
 import { Link } from "react-router-dom";
+
+import configdata from "../config.json";
+
 const Dashboard = () => {
   const [menu, setMenu] = useState(false);
   const [inpId, setInpId] = useState();
@@ -17,10 +20,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     const getBlockInfo = async () => {
-      const response = await axios.get(
-        "http://localhost:8002/getblockinfo",
-        {}
-      );
+      const response = await axios.get(`${configdata.api}/getblockinfo`, {});
       console.log("resp=>", response);
       const blockArray = [
         response.data.previousBlockInfo[0].transactions[0],

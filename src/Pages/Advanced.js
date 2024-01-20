@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { CryptoLogos } from "@web3uikit/core";
 import TableNew from "../Components/Table";
 import axios from "axios";
+import configdata from "../config.json";
 
 export default function Advanced() {
   const [getTable, setGetTable] = useState(false);
@@ -10,7 +11,7 @@ export default function Advanced() {
 
   useEffect(() => {
     const highVol = async () => {
-      const response = await axios.get("http://localhost:8002/high-volume");
+      const response = await axios.get(`${configdata.api}/high-volume`);
       console.log("my new data=>", response.data.data);
       setData(response.data.data);
       setGetTable(true);
