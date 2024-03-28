@@ -1,5 +1,7 @@
 ## Problem Statement 12
 
+![image](https://github.com/sahilrohera10/RJPOLICE_HACK_1330_HackerX_12/assets/90958499/0eea8dd7-cd9d-4f85-a7b4-3eec36a7120e)
+
 SOLUTION PPT - https://drive.google.com/file/d/1j_b61yc_wdRtTBMoDMQTEtxn8S2fvS6p/view?usp=sharing
 
 # Problem Background:
@@ -21,7 +23,6 @@ Free software like Blockexplorer, Metasleuth, and Etherscan have limitations in 
 $ Cross-Border Transactions:
 The flow of cryptocurrency often involves cross-border transactions, adding another layer of complexity to the investigation.
 
-![image](https://github.com/sahilrohera10/RJPOLICE_HACK_1330_HackerX_12/assets/90958499/0eea8dd7-cd9d-4f85-a7b4-3eec36a7120e)
 
 
 # Expected Solution:
